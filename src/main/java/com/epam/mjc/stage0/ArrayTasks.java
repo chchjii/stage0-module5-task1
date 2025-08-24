@@ -11,7 +11,8 @@ public class ArrayTasks {
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
     public String[] seasonsArray() {
-        return seasonsArray();
+        String [] seasonArray = {"winter", "spring", "summer", "autumn"};
+        return seasonArray;
     }
 
     /**
@@ -25,7 +26,11 @@ public class ArrayTasks {
      * length = 5  -> [1, 2, 3, 4, 5]
      */
     public int[] generateNumbers(int length) {
-
+        int [] numbers = new int[length];
+        for (int i = 0; i < length; i++) {
+            numbers[i] = i+1;
+        }
+        return numbers;
     }
 
     /**
@@ -37,7 +42,11 @@ public class ArrayTasks {
      * arr = [5, -3, -4] -> sum = -2
      */
     public int totalSum(int[] arr) {
-
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum;
     }
 
     /**
@@ -50,7 +59,12 @@ public class ArrayTasks {
      * arr = [5, -3, -4],   number = 10    ->  -1
      */
     public int findIndexOfNumber(int[] arr, int number) {
-
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == number) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -63,7 +77,13 @@ public class ArrayTasks {
      * arr = ["pineapple", "apple", "pen"] -> ["pen", "apple", "pineapple"]
      */
     public String[] reverseArray(String[] arr) {
-
+        String ghj = "";
+        for (int i = 1; i <= arr.length-1; i++) {
+            ghj = arr[arr.length-i];
+            arr[arr.length-i] = arr[i-1];
+            arr[i-1] = ghj;
+        }
+        return arr;
     }
 
     /**
@@ -78,7 +98,22 @@ public class ArrayTasks {
      * arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-
+        int counter = 1;
+        while (counter <= arr.length) {
+            if (arr[counter-1] > 0) {
+                counter++;
+            }
+        }
+        int[] posistiveNumber = new int[counter];
+        for (int i = 0; i < counter; i++) {
+            if (arr[i] > 0) {
+                posistiveNumber[i] = arr[i];
+            }
+            else {
+                continue;
+            }
+        }
+        return posistiveNumber;
     }
 
     /**
