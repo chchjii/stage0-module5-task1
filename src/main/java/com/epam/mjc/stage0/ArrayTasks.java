@@ -77,11 +77,11 @@ public class ArrayTasks {
      * arr = ["pineapple", "apple", "pen"] -> ["pen", "apple", "pineapple"]
      */
     public String[] reverseArray(String[] arr) {
-        String ghj = "";
-        for (int i = 1; i <= arr.length-1; i++) {
-            ghj = arr[arr.length-i];
-            arr[arr.length-i] = arr[i-1];
-            arr[i-1] = ghj;
+        int n = arr.length;
+        for (int i = 0; i < n / 2; i++) {
+            String temp = arr[i];
+            arr[i] = arr[n - 1 - i];
+            arr[n - 1 - i] = temp;
         }
         return arr;
     }
@@ -98,21 +98,21 @@ public class ArrayTasks {
      * arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-        int counter = 0;
+        int count = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 0) counter++;
+            if (arr[i] > 0) count++;
         }
 
-        int[] posistiveNumber = new int[counter];
-        for (int i = 0; i < counter; i++) {
+        int[] positiveNumbers = new int[count];
+
+        int index = 0;
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
-                posistiveNumber[i] = arr[i];
-            }
-            else {
-                continue;
+                positiveNumbers[index++] = arr[i];
             }
         }
-        return posistiveNumber;
+
+        return positiveNumbers;
     }
 
     /**
